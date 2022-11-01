@@ -11,7 +11,7 @@ export class GamesController {
   ): Promise<string> {
     const response = cursor
       ? await fetch(
-          `https://games.roblox.com/v2/users/${id}/games?sortOrder=Asc&limit=50&cursor=${cursor}`,
+          `https://games.roblox.com/v2/users/${id}/games?sortOrder=Asc&accessFilter=Public&limit=50&cursor=${cursor}`,
           {
             headers: {
               contentType: 'application/json',
@@ -19,7 +19,7 @@ export class GamesController {
           },
         )
       : await fetch(
-          `https://games.roblox.com/v2/users/${id}/games?sortOrder=Asc&limit=50`,
+          `https://games.roblox.com/v2/users/${id}/games?sortOrder=Asc&accessFilter=Public&limit=50`,
           {
             headers: {
               contentType: 'application/json',
